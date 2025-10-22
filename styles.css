@@ -1,23 +1,24 @@
 :root {
-  --bg: #0f1724;
-  --card: #0b1220;
-  --muted: #9aa4b2;
+  --bg: #0b1120;
+  --card: #101a33;
+  --muted: #a3adc2;
   --accent: #6ee7b7;
-  --accent-2: #60a5fa;
-  --glass: rgba(255, 255, 255, 0.04);
+  --accent-2: #3b82f6;
+  --glass: rgba(255, 255, 255, 0.06);
   --radius: 14px;
-  --shadow: 0 6px 30px rgba(2, 6, 23, 0.7);
+  --shadow: 0 6px 30px rgba(0, 0, 0, 0.5);
 }
 
 * {
   box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
 html, body {
   height: 100%;
-  margin: 0;
   font-family: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
-  background: linear-gradient(180deg, #071022 0%, #081428 45%, #07172a 100%);
+  background: radial-gradient(circle at 20% 20%, #0d1733, #070d1e 80%);
   color: #e6eef8;
   line-height: 1.45;
   -webkit-font-smoothing: antialiased;
@@ -26,6 +27,11 @@ html, body {
 a {
   color: var(--accent-2);
   text-decoration: none;
+  transition: color 0.3s;
+}
+
+a:hover {
+  color: var(--accent);
 }
 
 /* --- Layout --- */
@@ -56,12 +62,13 @@ header {
   align-items: center;
   justify-content: center;
   font-weight: 700;
-  box-shadow: 0 6px 20px rgba(96, 165, 250, 0.12);
+  box-shadow: 0 6px 20px rgba(96, 165, 250, 0.15);
 }
 
 .logo span {
-  color: #05263b;
+  color: #021627;
   font-size: 20px;
+  font-weight: 800;
 }
 
 nav {
@@ -75,31 +82,38 @@ nav a {
   font-weight: 600;
 }
 
+nav a:hover {
+  color: var(--accent);
+}
+
 .cta {
   background: linear-gradient(90deg, var(--accent), var(--accent-2));
-  padding: 10px 14px;
+  padding: 10px 16px;
   border-radius: 10px;
-  color: #022;
+  color: #021627;
   font-weight: 700;
+  box-shadow: 0 4px 16px rgba(96, 165, 250, 0.25);
 }
 
 /* --- Hero Section --- */
 .hero {
   display: grid;
   grid-template-columns: 1fr 420px;
-  gap: 28px;
-  margin-top: 28px;
+  gap: 32px;
+  margin-top: 40px;
   align-items: center;
 }
 
 .hero h1 {
-  font-size: 36px;
-  margin: 0 0 12px;
+  font-size: 40px;
+  margin-bottom: 12px;
+  line-height: 1.2;
 }
 
 .hero p {
   color: var(--muted);
-  margin: 0 0 18px;
+  margin-bottom: 20px;
+  font-size: 16px;
 }
 
 .actions {
@@ -108,17 +122,19 @@ nav a {
 }
 
 .btn {
-  padding: 12px 16px;
+  padding: 12px 18px;
   border-radius: 12px;
-  background: var(--glass);
-  border: 1px solid rgba(255, 255, 255, 0.03);
+  background: linear-gradient(135deg, rgba(255,255,255,0.06), rgba(255,255,255,0.02));
+  border: 1px solid rgba(255, 255, 255, 0.05);
   color: #fff;
+  font-weight: 600;
   cursor: pointer;
-  transition: background 0.3s;
+  transition: all 0.25s ease;
 }
 
 .btn:hover {
-  background: rgba(255, 255, 255, 0.1);
+  background: linear-gradient(135deg, var(--accent-2), var(--accent));
+  color: #021627;
 }
 
 /* --- Cards / Tiles --- */
@@ -127,123 +143,120 @@ nav a {
   border-radius: var(--radius);
   padding: 18px;
   box-shadow: var(--shadow);
+  border: 1px solid rgba(255,255,255,0.05);
 }
 
 .tiles {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 12px;
-  margin-top: 14px;
+  grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+  gap: 14px;
+  margin-top: 18px;
 }
 
 .tile {
-  min-height: 110px;
   border-radius: 12px;
   padding: 14px;
-  background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
-  border: 1px solid rgba(255,255,255,0.02);
-  position: relative;
-  overflow: hidden;
-  animation: pop 0.6s ease forwards;
-  opacity: 0;
+  background: linear-gradient(180deg, rgba(255,255,255,0.03), rgba(255,255,255,0.015));
+  border: 1px solid rgba(255,255,255,0.03);
+  transition: transform 0.3s, box-shadow 0.3s;
 }
 
-.tile:nth-child(1) { animation-delay: 0.05s; }
-.tile:nth-child(2) { animation-delay: 0.12s; }
-.tile:nth-child(3) { animation-delay: 0.18s; }
-.tile:nth-child(4) { animation-delay: 0.24s; }
-.tile:nth-child(5) { animation-delay: 0.30s; }
-.tile:nth-child(6) { animation-delay: 0.36s; }
+.tile:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 24px rgba(0,0,0,0.35);
+}
 
 .tile h3 {
-  margin: 0;
+  margin-bottom: 6px;
   font-size: 14px;
+  color: var(--muted);
 }
 
 .tile .value {
-  font-weight: 800;
+  font-weight: 700;
   font-size: 18px;
-  margin-top: 6px;
+  color: #fff;
 }
 
-.tile::after {
-  content: '';
-  position: absolute;
-  right: -30%;
-  top: -30%;
-  width: 120%;
-  height: 120%;
-  transform: rotate(30deg);
-  background: linear-gradient(90deg, rgba(96,165,250,0.06), rgba(110,231,183,0.04));
-  filter: blur(18px);
-  opacity: 0;
-  transition: opacity .35s;
-}
-
-.tile:hover::after {
-  opacity: 1;
-}
-
-@keyframes pop {
-  to {
-    transform: none;
-    opacity: 1;
-  }
-}
-
-/* --- Features / Gallery / Pricing --- */
+/* --- Features --- */
 .features {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
   gap: 18px;
-  margin-top: 28px;
+  margin-top: 40px;
 }
 
 .feature {
   padding: 18px;
   border-radius: 12px;
-  background: linear-gradient(180deg, rgba(255,255,255,0.02), transparent);
-  border: 1px solid rgba(255,255,255,0.02);
+  background: var(--glass);
+  border: 1px solid rgba(255,255,255,0.04);
+  transition: background 0.3s;
+}
+
+.feature:hover {
+  background: rgba(255,255,255,0.08);
 }
 
 .feature h4 {
-  margin: 0 0 8px;
+  margin-bottom: 8px;
+  color: #fff;
 }
 
+/* --- Gallery --- */
 .gallery {
   display: flex;
+  flex-wrap: wrap;
   gap: 12px;
-  margin-top: 20px;
+  margin-top: 30px;
 }
 
 .mock {
   flex: 1;
+  min-width: 260px;
   border-radius: 12px;
   min-height: 180px;
-  background: linear-gradient(180deg, #021026, #05102a);
+  background: linear-gradient(180deg, #0a162c, #091326);
   display: flex;
   align-items: center;
   justify-content: center;
   color: var(--muted);
+  font-weight: 500;
 }
 
+/* --- Pricing & Contact --- */
 .two {
   display: grid;
-  grid-template-columns: 1fr 320px;
+  grid-template-columns: 1fr 340px;
   gap: 18px;
-  margin-top: 28px;
+  margin-top: 40px;
 }
 
 .price .plan {
-  padding: 14px;
+  margin-bottom: 18px;
+  padding: 18px;
   border-radius: 12px;
-  background: linear-gradient(180deg, rgba(255,255,255,0.02), transparent);
+  background: linear-gradient(180deg, rgba(255,255,255,0.03), rgba(255,255,255,0.01));
   border: 1px solid rgba(255,255,255,0.03);
+  transition: background 0.3s;
 }
 
+.price .plan:hover {
+  background: rgba(255,255,255,0.07);
+}
+
+/* --- Footer --- */
 footer {
-  margin-top: 36px;
+  margin-top: 50px;
   text-align: center;
   color: var(--muted);
   font-size: 14px;
+}
+
+footer a {
+  color: var(--accent-2);
+}
+
+footer a:hover {
+  color: var(--accent);
 }
