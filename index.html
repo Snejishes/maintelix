@@ -1,10 +1,10 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="de">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Maintelix — Machine Data Collection</title>
-  <meta name="description" content="Maintelix — Erfassung, Analyse und Visualisierung von Maschinendaten in Echtzeit.">
+  <meta name="description" content="Maintelix — Modernes System zur Erfassung und Analyse von Maschinendaten. Echtzeit, Visualisierungen, Alerts und Integrationen.">
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
@@ -12,147 +12,104 @@
     <header>
       <div class="brand">
         <div class="logo"><span>M</span></div>
-        <div>
-          <div style="font-weight:700;">Maintelix- WEBSITE NOCH NICHT VERWENDEN - IN BEARBEITUNG</div>
-          <div style="font-size:12px;color:var(--muted)">Machine data collection</div>
-        </div>
+        <h2>Maintelix WEBSITE NICHT VERWENDEN- IN BEARBEITUNG</h2>
       </div>
-
       <nav>
         <a href="#features">Features</a>
         <a href="#gallery">Screenshots</a>
         <a href="#pricing">Preise</a>
-        <a href="impressum.html">Impressum</a>
-        <a href="datenschutz.html">Datenschutz</a>
         <a href="#contact" class="cta">Kontakt</a>
       </nav>
     </header>
 
-    <main>
-      <!-- HERO -->
-      <section class="hero">
-        <div>
-          <h1>Intelligente Maschinendaten<br>in Echtzeit erfassen</h1>
-          <p>Maintelix verbindet Maschinen, sammelt Telemetrie und liefert aussagekräftige Dashboards, Alerts und Integrationen für predictive maintenance.</p>
-          <div class="actions" style="margin-top:18px;">
-            <a href="#features" class="btn">Mehr erfahren</a>
-            <a href="#contact" class="btn">Demo anfragen</a>
+    <section class="hero">
+      <div>
+        <h1>Intelligente Maschinendaten<br>in Echtzeit erfassen</h1>
+        <p>Maintelix ist die moderne Lösung zur Erfassung, Analyse und Visualisierung von Maschinendaten — für effiziente Produktion und smarte Wartung.</p>
+        <div class="actions">
+          <a href="#features" class="btn">Mehr erfahren</a>
+          <a href="#contact" class="btn">Demo anfragen</a>
+        </div>
+      </div>
+      <div class="card">
+        <h3>Live Overview</h3>
+        <div class="tiles">
+          <div class="tile">
+            <h3>Temperatur</h3>
+            <p class="value">67°C</p>
+          </div>
+          <div class="tile">
+            <h3>Leistung</h3>
+            <p class="value">92%</p>
+          </div>
+          <div class="tile">
+            <h3>Durchsatz</h3>
+            <p class="value">180 Stk/h</p>
+          </div>
+          <div class="tile">
+            <h3>Stillstand</h3>
+            <p class="value">3%</p>
+          </div>
+          <div class="tile">
+            <h3>Energie</h3>
+            <p class="value">12.4 kWh</p>
+          </div>
+          <div class="tile">
+            <h3>Vibration</h3>
+            <p class="value">Normal</p>
           </div>
         </div>
+      </div>
+    </section>
 
-        <!-- HERO RIGHT: LIVE OVERVIEW -->
-        <aside class="hero-right">
-          <div class="card live-overview" id="liveOverview">
-            <h3>Live Overview</h3>
+    <section id="features" class="features">
+      <div class="feature">
+        <h4>Echtzeit-Daten</h4>
+        <p>Erfasse Live-Sensordaten und visualisiere Trends sofort im Dashboard.</p>
+      </div>
+      <div class="feature">
+        <h4>Automatische Analyse</h4>
+        <p>Intelligente Algorithmen erkennen Anomalien und Wartungsbedarf.</p>
+      </div>
+      <div class="feature">
+        <h4>Integration & API</h4>
+        <p>Verbinde Maintelix einfach mit Anlagen oder Cloud-Systemen.</p>
+      </div>
+    </section>
 
-            <div class="tiles live" id="overviewTiles">
-              <div class="tile live">
-                <div>
-                  <h3>Temperatur</h3>
-                  <p class="value">67°C</p>
-                  <p>Sensor A · Eing. 1</p>
-                </div>
-              </div>
+    <section id="gallery" class="gallery">
+      <div class="mock">Screenshot 1</div>
+      <div class="mock">Screenshot 2</div>
+      <div class="mock">Screenshot 3</div>
+    </section>
 
-              <div class="tile live">
-                <div>
-                  <h3>Leistung</h3>
-                  <p class="value">92%</p>
-                  <p>AC Motor · Linie 2</p>
-                </div>
-              </div>
-
-              <div class="tile live">
-                <div>
-                  <h3>Durchsatz</h3>
-                  <p class="value">180 Stk/h</p>
-                  <p>Band 3</p>
-                </div>
-              </div>
-
-              <div class="tile live">
-                <div>
-                  <h3>Stillstand</h3>
-                  <p class="value">3%</p>
-                  <p>letzte 24h</p>
-                </div>
-              </div>
-
-              <div class="tile live">
-                <div>
-                  <h3>Energie</h3>
-                  <p class="value">12.4 kWh</p>
-                  <p>Gesamt</p>
-                </div>
-              </div>
-
-              <div class="tile live">
-                <div>
-                  <h3>Vibration</h3>
-                  <p class="value">Normal</p>
-                  <p>RMS 0.12g</p>
-                </div>
-              </div>
-            </div>
-
-            <div style="margin-top:14px; display:flex; gap:10px; justify-content:flex-end;">
-              <button class="btn ghost" id="btnRefreshOverview">Aktualisieren</button>
-              <a href="#gallery" class="btn">Zum Dashboard</a>
-            </div>
-          </div>
-        </aside>
-      </section>
-
-      <!-- FEATURES -->
-      <section id="features" class="features">
-        <div class="feature">
-          <h4>Echtzeit-Daten</h4>
-          <p>Live-Sensordaten erfassen und Trends direkt visualisieren.</p>
+    <section id="pricing" class="two">
+      <div class="price">
+        <div class="plan">
+          <h3>Starter</h3>
+          <p>Für kleine Maschinenparks und Tests.</p>
+          <p><strong>xx€ / Monat</strong></p>
         </div>
-        <div class="feature">
-          <h4>Anomalie-Erkennung</h4>
-          <p>Automatische Erkennung kritischer Zustände mit Alerts.</p>
+        <div class="plan">
+          <h3>Pro</h3>
+          <p>Für mittlere und große Produktionsanlagen.</p>
+          <p><strong>xx€ / Monat</strong></p>
         </div>
-        <div class="feature">
-          <h4>Integrationen</h4>
-          <p>Grafana, Prometheus, InfluxDB, Webhooks und REST-API.</p>
-        </div>
-      </section>
-
-      <!-- GALLERY -->
-      <section id="gallery" class="gallery" style="margin-top:18px;">
-        <div class="mock">Screenshot 1</div>
-        <div class="mock">Screenshot 2</div>
-        <div class="mock">Screenshot 3</div>
-      </section>
-
-      <!-- PRICING / CONTACT -->
-      <section id="pricing" class="two">
-        <div class="price">
-          <div class="plan card" style="margin-bottom:12px;">
-            <h3>Starter</h3>
-            <p>Für Tests und kleine Anlagen.</p>
-            <p><strong>xx€ / Monat</strong></p>
-          </div>
-          <div class="plan card">
-            <h3>Pro</h3>
-            <p>Für mittlere bis große Anlagen.</p>
-            <p><strong>xx€ / Monat</strong></p>
-          </div>
-        </div>
-
-        <div id="contact" class="card">
-          <h3>Kontakt aufnehmen</h3>
-          <p>Interesse an einer Demo oder Fragen? Schreibe uns:</p>
-          <a href="mailto:timfischer12828@gmail.com" class="btn">E-Mail schreiben</a>
-        </div>
-      </section>
-    </main>
+      </div>
+      <div id="contact" class="card">
+        <h3>Kontakt aufnehmen</h3>
+        <p>Fragen oder Interesse? Kontaktiere uns für eine Demo.</p>
+        <a href="mailto:timfischer12828@gmail.com" class="btn">E-Mail schreiben</a>
+      </div>
+    </section>
 
     <footer>
-      <p>© 2025 Maintelix.works — <a href="impressum.html">Impressum</a> · <a href="datenschutz.html">Datenschutz</a></p>
+      <p>© 2025 Maintelix.works — Machine Data Collection Software</p>
+    <p>
+      © 2025 Maintelix.works — <a href="impressum.html">Impressum</a> · <a href="datenschutz.html">Datenschutz</a>
+    </p>
     </footer>
-  </div>
 
+  </div>
 </body>
 </html>
